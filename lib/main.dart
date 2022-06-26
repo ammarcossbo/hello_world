@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       // This call to setState tells the Flutter framework that something has
 
-      _counter++;
+      _counter--;
     });
   }
 
@@ -68,10 +68,22 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: _decrementCounter,
+            tooltip: 'Decremento',
+            backgroundColor: Colors.red,
+            child: const Icon(Icons.minimize),
+          ),
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
